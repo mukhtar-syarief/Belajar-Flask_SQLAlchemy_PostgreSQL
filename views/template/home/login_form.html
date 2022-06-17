@@ -1,0 +1,18 @@
+{% extends 'public/header.html' %}
+    {% block content %}
+        <div class="form-wrapper">
+            {% if error %}
+                <div class="form-error">
+                    {{error}}
+                </div>
+            {% endif %}
+            <div class="login-text">Silahkan Log In</div>
+                <form action="/login" method="post">
+                    <label for="email">Masukkkan Email Anda:</label>
+                    <input type="email" class="isian-form" placeholder="example@example.com" name="email" value="{{ email }}">
+                    <label for="password">Masukkkan Password Anda:</label>
+                    <input type="password" class="isian-form" name="password" value="{{ password }}">
+                    <button type="submit" class="button">Log In</button>
+                </form>
+        </div>
+    {% endblock %}

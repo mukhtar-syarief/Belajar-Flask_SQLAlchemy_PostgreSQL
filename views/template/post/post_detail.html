@@ -1,0 +1,35 @@
+{% extends 'public/header.html' %}
+    {% block content %}
+    <div class="post-content">
+        <div class="main-post">
+            <div class="post-item">
+                <div class="user-article"><strong>{{ article.user.nama }}</strong></div>
+                <div class="judul-article">Judul : {{ article.judul }}</div>
+                <div class="konten-article">{{ article.konten }}</div>
+                {% for tags in article.tags %}
+                <div class="tag">#{{ tags.tags.nama }}</div>
+                {% endfor %}
+            </div>
+            <div class="option-item">
+            <a href="/article/{{ article.id }}/comments" class="option">Comment</a>
+            {% if article.user.id == session['user_id']%}
+            <a href="/article/{{ article.id }}/delete" class="option">Delete</a>
+            <a href="/article/{{ article.id }}/edit" class="option">Edit</a>
+            {% endif %}
+            </div>
+            {% if comments %}
+            {% for comment in comments %}
+            <div class="comments">
+                <div class="user-comment">
+                    {{ comment.user.nama }}
+                </div>
+                <div class="comment">
+                    {{ comment.komentar }}
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </ul>
+        </div>
+    </div>
+    {% endblock %}

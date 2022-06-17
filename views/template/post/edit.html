@@ -1,0 +1,22 @@
+{% extends 'public/header.html' %}
+    {% block content %}
+        <div class="post-container">
+            <div class="form-wrapper">
+                <div class="post">
+                    <form action="/article/{{ article.id }}/edit" method="post">
+                        <table>
+                            <tr>
+                                <td>Judul</td>
+                                <td><textarea name="judul" cols="30" rows="2">{{ article.judul }}</textarea></td>
+                            </tr>
+                            <tr>
+                                <td>Konten</td>
+                                <td><textarea name="konten" cols="30" rows="10">{{ article.konten }}</textarea></td>
+                            </tr>
+                        </table>
+                        <button type="submit"> Save Edit </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endblock %}

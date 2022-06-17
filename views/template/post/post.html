@@ -1,0 +1,34 @@
+{% extends 'public/header.html' %}
+    {% block content %}
+        <div class="post-container">
+            <div class="form-wrapper">
+                <div class="post">
+                    <form action="/new" method="post">
+                        <table>
+                            <tr>
+                                <td>Jenis Postingan</td>
+                                <td><select name="categorie">
+                                    {% for categorie in categories %}
+                                    <option value="{{ categorie.id }}">{{ categorie.categories }}</option>
+                                    {% endfor %}
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td>Judul</td>
+                                <td><textarea name="judul" cols="30" rows="2"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>Konten</td>
+                                <td><textarea name="konten" cols="30" rows="10"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><label for="tag">Tagar</label></td>
+                                <td><input type="text" name="tag"></td>
+                            </tr>
+                        </table>
+                        <button type="submit"> Posting </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endblock %}

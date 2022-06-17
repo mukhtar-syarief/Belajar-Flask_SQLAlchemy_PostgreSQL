@@ -1,0 +1,13 @@
+{% extends 'public/header.html' %}
+    {% block content %}
+    <div class="komen-container">
+        <div class="form-wrapper">
+            <div class="comment">
+                <div class="user">
+                    <div class="user_name">{{user.nama}}</div>
+                    <div class="user_email">{{user.email}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

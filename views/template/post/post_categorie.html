@@ -1,0 +1,22 @@
+{% extends 'public/header.html' %}
+    {% block content %}
+    <div class="categories">
+        {% if categories %}
+            {% for categorie in categories %}
+                <div class="categorie"><a href="/article/{{categorie.categories}}">{{ categorie.categories }}</a></div>
+            {% endfor %}
+        {% endif %}
+    </div> 
+        <div class="list-post">
+            {% for article in articles|reverse %}
+            <div class="list-categorie">
+            </div>
+                <div class="list-artikel">
+                    <ul>
+                        <li class="nama-user" name="nama-user"><a href="/{{ article.articles.user.nama }}" >{{ article.articles.user.nama }}</a></li><hr>
+                        <li class="judul-artikel" name="judul-artikel"><a href="/article_detail/{{ article.articles.id }}">Judul : {{article.articles.judul}}</a></li>
+                        <li class="konten-artikel" name="konten">{{article.articles.konten}}</li>
+                </div>
+            {% endfor %}
+        </div>    
+    {% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'public/header.html' %}
+    {% block content %}    
+        <div class="form-wrapper">
+            <form action="/signup" method="post">
+                {% if error %}
+                <div>{{error}}</div>
+                {% endif %}
+                <div class="signup-text">Daftar Denga Mengisi Form Berikut</div>
+                <label for="nama">Masukkan Nama Anda:</label>
+                <input type="text" class="isian-form" name = "nama" value="{{ nama }}">
+                <label for="email">Masukkkan Email Anda:</label>
+                <input type="email" class="isian-form" placeholder="example@example.com" name="email" value="{{ email }}">
+                <label for="password">Masukkkan Password Anda:</label>
+                <input type="password" class="isian-form" name="password" value="{{ password }}">
+                <button type="submit" class="button">Sign Up</button>
+            </form>
+        </div>
+    {% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'public/header.html' %}
+    {% block content %}
+    <div class="komen-container">
+        <div class="form-wrapper">
+            <div class="comment">
+                <form action="/article/{{ id }}/comments" method="post">
+                    <div>Komentar</div>
+                    <textarea name="comment" cols="30" rows="10"></textarea>
+                    <button type="submit"> Post comment </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

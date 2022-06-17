@@ -1,0 +1,164 @@
+body{
+    background-color: #F2F2F2;
+    margin: 0;
+}
+.container{
+    height: 80px;
+    width:100%;
+    background-color: #247881;
+    position:fixed;
+    top:0px;
+    left:0px;
+    z-index: 20;
+}
+.header{
+    margin-left: 20px;
+    float: left;
+}
+.header a{
+    color: white;
+    text-decoration: none;
+}
+.header-menu{
+    float: right;
+    right: 0;
+}
+.list-header{
+    display: flex;
+    padding: 30px;
+}
+.header-menu div a{
+    text-decoration: none;
+    color:white;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.categories{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #76b7bd;
+    left: 0;
+    padding: 15px 0px;
+    width: 100%;
+    position: relative;
+}
+.categories a{
+    text-decoration: none;
+    color: black;
+    opacity: 0.6;
+}
+.categories a:hover{
+    opacity: 1;
+}
+
+
+.form-wrapper{
+	width: 350px;
+	background: #F7F7F7;
+    margin: 100px auto;
+	padding: 30px 20px;
+    border-radius: 10px;
+}
+.login-text, .signup-text {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+label{
+    margin: 5px 5px;
+    padding: 5px 0;
+}
+.isian-form{
+    box-sizing : border-box;
+	width: 100%;
+	padding: 10px;
+	font-size: 11pt;
+	margin-bottom: 20px;
+}
+.button{
+    font-size: 12pt;
+	width: 100%;
+	border: none;
+	border-radius: 3px;
+	padding: 10px 20px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+.button:hover{
+    opacity: 1;
+}
+
+
+.list-post{
+    margin: 100px auto;
+    width: 700px;
+    border-radius: 10px;
+}
+.list-artikel{
+    margin-bottom: 50px;
+}
+hr{
+    width: 100%;
+}
+.list-post ul li{
+    list-style-type: none;
+}
+.list-post ul li a{
+    color: black;
+    text-decoration: none;
+}
+.nama-user{
+    font-size: 20px;
+}
+.judul-artikel{
+    font-size: 18px;
+}
+
+.post-content{
+    margin: 100px auto;
+    width: 500px;
+    border-radius: 10px;
+    background-color: #F6FBF4;
+}
+.post-item{
+    background-color: #50959b;
+    padding: 30px;
+}
+.user-article{
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+.judul-article{
+    margin-bottom: 3px;
+}
+
+.option{
+    text-decoration: none;
+    color: black;
+    opacity: 0.7;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.option-item{
+    background-color:#76b7bd;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    justify-items: center;
+}
+.option:hover{
+    opacity: 1;
+}
+
+.comments{
+    padding-left: 30px;
+    margin: 20px 0;
+}
+.user-comment{
+    font-size: 18px;
+
+}
