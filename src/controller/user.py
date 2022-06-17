@@ -14,6 +14,7 @@ def create_user(nama, email, password):
 
 #User Login
 def user_login(email,password):
+    email = email.lower()
     password = hashlib.md5(password.encode())
     hash_password = password.hexdigest()
     user = s.query(Users).filter(and_(Users.email == email, Users.password == hash_password)).first()

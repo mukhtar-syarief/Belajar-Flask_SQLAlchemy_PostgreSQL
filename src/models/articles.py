@@ -1,8 +1,8 @@
 from sqlalchemy import VARCHAR, Column, DateTime, ForeignKey, Integer, Text, func
 from sqlalchemy.orm import relationship
 from src.models.config import db
+from src.models.categorie_articele import CategorieArticle
 from src.models.artikel_tag_assosiation import ArticleTag
-from src.models.categories import Categories
 
 
 class Articles(db):

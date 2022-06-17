@@ -1,6 +1,7 @@
 from sqlalchemy import Column, ForeignKey, Integer
 from sqlalchemy.orm import relationship
 from src.models.config import db
+from src.models.tags import Tags
 
 class ArticleTag(db):
     __tablename__ = "article_tag_assosiation"

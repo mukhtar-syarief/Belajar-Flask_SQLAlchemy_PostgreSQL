@@ -1,6 +1,7 @@
 from sqlalchemy import Column, ForeignKey, Integer
 from sqlalchemy.orm import relationship
 from src.models.config import db
+from src.models.categories import Categories
 
 class CategorieArticle(db):
     __tablename__ = "article_categorie"

@@ -2,6 +2,8 @@ from sqlalchemy import Column, DateTime, Integer, Text, func
 from sqlalchemy.orm import relationship
 from flask_login import UserMixin
 from src.models.config import db
+from src.models.comments import Comments
+from src.models.articles import Articles
 
 class Users(db, UserMixin):
     __tablename__ = "users"

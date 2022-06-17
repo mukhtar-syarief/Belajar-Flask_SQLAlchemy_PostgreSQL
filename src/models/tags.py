@@ -1,7 +1,6 @@
 from sqlalchemy import VARCHAR, Column, Integer
 from sqlalchemy.orm import relationship
 from src.models.config import db
-from src.models.articles import Articles
 
 
 class Tags(db):
