@@ -1,10 +1,29 @@
 from re import A
 import pytest
 from server import app
+from src.models.models import Users, s
+
+
+@pytest.fixture(scope="session")
+def create_app():
+    return app
+
+@pytest.fixture
+def app_with_data(create_app):
+    user = Users(nama="sergio", email="sergio@gmail.com")
+    s.add(user)
+
+    s.commit()
+
+    yield app_with_data
+
+    s.delete(user)
+    s.commit()
+
 
 @pytest.fixture
 def client():
-    return app.test_client()
+    return app.test_client() 
 
 def test_home_page(client):
     response = client.get("/")
@@ -18,9 +37,9 @@ def test_sign_up_page(client):
     response = client.get("/signup")
     assert response.status_code == 200
 
-def test_sign_up_page_post(client):
-    response = client.post("/signup")
-    assert response.status_code == 200
+# def test_sign_up_page_post(client):
+#     response = client.post("/signup")
+#     assert response.status_code == 200
 
 def test_article_page(client):
     response = client.get("/article")

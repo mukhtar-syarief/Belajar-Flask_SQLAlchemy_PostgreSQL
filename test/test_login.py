@@ -2,11 +2,11 @@ from src.controller import user
 from unittest import mock
 
 def test_login_user_benar():
-    data_user = user.user_login("babulilmi@gmail.com", "123456789")
+    data_user = user.user_login("babulilmi@gmail.com")
     user_benar(data_user)
 
 def test_login_email_huruf_besar():
-    data_user = user.user_login("baBulilmI@gmaiL.Com", "123456789")
+    data_user = user.user_login("baBulilmI@gmaiL.Com")
     user_benar(data_user)
 
 
