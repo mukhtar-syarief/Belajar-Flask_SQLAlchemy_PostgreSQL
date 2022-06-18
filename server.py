@@ -16,7 +16,7 @@ from src.blueprint.article_categorie import categorie
 from src.blueprint.user_api import user
 from src.blueprint.logout import logout
 
-app = Flask(__name__, template_folder = "views/template", static_folder = "views/static")
+app = Flask(__name__, template_folder = "src/views/template", static_folder = "src/views/static")
 app.config["SECRET_KEY"] = "MencintaiDalamSepi"
 
 

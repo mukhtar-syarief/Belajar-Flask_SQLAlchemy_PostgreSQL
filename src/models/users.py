@@ -12,5 +12,6 @@ class Users(db, UserMixin):
     email = Column(Text, unique = True)
     password = Column(Text)
     created_at = Column(DateTime, default = func.now())
+    last_modified = Column(DateTime, default = func.now(), onupdate = func.now())
     articles = relationship("Articles", back_populates = "user", cascade = "all, delete")
     komentar = relationship("Comments", back_populates = "user", cascade = "all, delete")
