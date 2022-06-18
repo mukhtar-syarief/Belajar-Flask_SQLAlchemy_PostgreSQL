@@ -1,3 +1,4 @@
+from re import A
 import pytest
 from server import app
 
@@ -15,6 +16,10 @@ def test_login_page(client):
 
 def test_sign_up_page(client):
     response = client.get("/signup")
+    assert response.status_code == 200
+
+def test_sign_up_page_post(client):
+    response = client.post("/signup")
     assert response.status_code == 200
 
 def test_article_page(client):
@@ -51,6 +56,10 @@ def test_comments_page_post(client):
 
 def test_user_page(client):
     response = client.get("/Salman Fahriza")
+    assert response.status_code == 302
+
+def test_categorie_page(client):
+    response = client.get("/article/Religi")
     assert response.status_code == 302
 
 def test_logout_page(client):

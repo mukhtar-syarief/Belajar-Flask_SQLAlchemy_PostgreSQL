@@ -11,17 +11,16 @@ def create_user(nama, email, password):
     user = Users(nama = f"{nama}", email = f"{email}", password = f"{hash_password}")
     s.add(user)
     s.commit()
+    return user
 
 #User Login
-def user_login(email,password):
+def user_login(email):
     email = email.lower()
-    password = hashlib.md5(password.encode())
-    hash_password = password.hexdigest()
-    user = s.query(Users).filter(and_(Users.email == email, Users.password == hash_password)).first()
-    if user == None:
-        return False
-    else:
-        return user
+    try:
+        user = s.query(Users).filter(Users.email == email).first()
+    except ValueError:
+        user = False
+    return user
 
 #Mencari User Berdasarkan ID
 def find_user_by_id(id):

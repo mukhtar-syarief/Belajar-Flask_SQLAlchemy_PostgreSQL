@@ -13,8 +13,14 @@ def signup():
             nama = request.form.get("nama")
             email = request.form.get("email")
             password = request.form.get("password")
-            if nama == "" or email == "" or password == "":
-                error = "Nama, E-mail, atau Password TIDAK BOLEH KOSONG.!"
+            if nama == "":
+                error = "Nama TIDAK BOLEH KOSONG.!"
+                return render_template('home/signup.html', error = error)
+            elif email == "":
+                error = "Email TIDAK BOLEH KOSONG.!"
+                return render_template('home/signup.html', error = error)
+            elif password == "":
+                error = "Password TIDAK BOLEH KOSONG.!"
                 return render_template('home/signup.html', error = error)
             else:
                 user = find_user_by_email(email)
